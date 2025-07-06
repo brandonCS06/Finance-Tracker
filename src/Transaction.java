@@ -32,6 +32,9 @@ public class Transaction {
     // toString for file saving
     @Override
     public String toString() {
+        return String.format("%d,%d,%s,%s,%s", id, amount, type, tName, date);
+    }
+    public String display() {
         return String.format("ID: %d,$%d,%s,%s,%s", id, amount, type, tName, date);
     }
 
@@ -45,6 +48,7 @@ public class Transaction {
         LocalDate date = LocalDate.parse(parts[4]);
         return new Transaction(id, amount, type, tName, date);
     }
+
 
     // getters
     public int getId() {

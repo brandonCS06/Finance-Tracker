@@ -63,7 +63,7 @@ public class FinanceTracker {
         Transaction t = new Transaction(amount, type, name, date);
         transactions.add(t);
         saveToFile();
-        System.out.println("Transaction added: " + t);
+        System.out.println("Transaction added: " + t.display());
     }
 
     //Method of removing a transaction from file
@@ -82,6 +82,9 @@ public class FinanceTracker {
         transactions.removeIf(t -> t.getId() == id);
         saveToFile();
         System.out.println("Transaction removed.");
+
+        System.out.println("Remaining transactions: ");
+        transactions.forEach(t -> System.out.println(t.display()));
     }
 
     //editing a transaction from file
@@ -125,7 +128,7 @@ public class FinanceTracker {
             default -> System.out.println("Invalid choice.");
         }
         saveToFile();
-        System.out.println("Updated: " + t);
+        System.out.println("Updated: " + t.display());
     }
 
     private void viewProfile() {
@@ -163,7 +166,7 @@ public class FinanceTracker {
                 String type = input.nextLine().toLowerCase();
                 for(Transaction t: transactions){
                     if(t.getType().equalsIgnoreCase(type))
-                        System.out.println(t);
+                        System.out.println(t.display());
                 }
             }
             case 2 -> {
@@ -175,7 +178,7 @@ public class FinanceTracker {
 
                 for(Transaction t: transactions){
                     if(t.getAmount()>= min && t.getAmount()<= max)
-                        System.out.println(t);
+                        System.out.println(t.display());
                 }
             }
             case 3 -> {
@@ -185,7 +188,7 @@ public class FinanceTracker {
                 LocalDate max = getUserDateInput();
                 for(Transaction t: transactions){
                     if((t.getDate().equals(min) || t.getDate().isAfter(min)) && (t.getDate().equals(max) || t.getDate().isBefore(max)))
-                        System.out.println(t);
+                        System.out.println(t.display());
                 }
             }
             case 4 -> {
@@ -193,7 +196,7 @@ public class FinanceTracker {
                 String name = input.nextLine();
                 for(Transaction t: transactions){
                     if(t.getName().toLowerCase().contains(name))
-                        System.out.println(t);
+                        System.out.println(t.display());
                 }
             }
         }
