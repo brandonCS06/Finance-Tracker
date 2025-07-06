@@ -150,6 +150,7 @@ public class FinanceTracker {
         System.out.println("Expense transactions: " + expenseCount + ", Total expenses: " + expenseSum);
     }
 
+    // Method to filter transactions based on user input
     private void filterTransactions()
     {
         System.out.println("Search By: ");
