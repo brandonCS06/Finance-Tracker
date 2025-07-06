@@ -1,4 +1,4 @@
-//Finance Tracker
+#Finance Tracker
 
 A Java console-based application that lets users track income and expenses, with features like:
 
