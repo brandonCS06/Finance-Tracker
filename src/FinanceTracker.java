@@ -79,7 +79,7 @@ public class FinanceTracker {
         int id = input.nextInt();
         input.nextLine();
 
-        transactions.removeIf(t -> t.getId() == id);
+        transactions.removeIf(t -> t.getId() == id && t.getName().equalsIgnoreCase(name));
         saveToFile();
         System.out.println("Transaction removed.");
 
