@@ -14,6 +14,7 @@ public class FinanceTracker {
         actions();
     }
 
+    // Main method to run the finance tracker
     private void actions() {
         while (true) {
             System.out.println("\n--- Finance Tracker ---");
@@ -131,6 +132,7 @@ public class FinanceTracker {
         System.out.println("Updated: " + t.display());
     }
 
+    //
     private void viewProfile() {
         int incomeCount = 0, expenseCount = 0;
         double incomeSum = 0, expenseSum = 0;

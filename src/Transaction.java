@@ -9,6 +9,7 @@ public class Transaction {
     private String tName;
     private LocalDate date;
 
+    //
     public Transaction(int amount, String type, String tName, LocalDate date) {
         this.id = nextId++;
         this.amount = amount;
