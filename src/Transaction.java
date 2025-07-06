@@ -46,7 +46,7 @@ public class Transaction {
         return new Transaction(id, amount, type, tName, date);
     }
 
-    // Getters
+    // getters
     public int getId() {
         return id;
     }
@@ -67,7 +67,7 @@ public class Transaction {
         return date;
     }
 
-    // Setters
+    // setters
     public void setAmount(int amount) {
         this.amount = amount;
     }

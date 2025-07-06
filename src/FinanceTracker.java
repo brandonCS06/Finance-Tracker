@@ -200,6 +200,7 @@ public class FinanceTracker {
 
     }
 
+    // Get user input for date with validation
     private LocalDate getUserDateInput() {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         while (true) {
@@ -213,6 +214,7 @@ public class FinanceTracker {
         }
     }
 
+    // Load transactions from file
     private void loadFromFile() {
         transactions.clear();
         try (BufferedReader reader = new BufferedReader(new FileReader(FILE_NAME))) {
@@ -225,6 +227,7 @@ public class FinanceTracker {
         }
     }
 
+    // Save transactions to file
     private void saveToFile() {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(FILE_NAME))) {
             for (Transaction t : transactions) {
